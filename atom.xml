@@ -3,7 +3,7 @@
     <title><![CDATA[PHPRio]]></title>
     <link href="https://php.rio/atom.xml" rel="self"/>
     <link href="https://php.rio/"/>
-    <updated>2019-10-30T19:08:04+00:00</updated>
+    <updated>2019-10-30T19:13:07+00:00</updated>
     <id>https://php.rio/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
 
@@ -34,6 +34,7 @@ Nosso objetivo era fazer com que mais pessoas estejam preparadas para realizar t
 ]]></content>
     </entry>
     
+<!--
         <entry>
         <title type="html"><![CDATA[REST-fuuu]]></title>
         <link href="https://php.rio/talks/2016-10-27/REST-fuuu"/>
@@ -83,5 +84,5 @@ Os principais tópicos abordados foram:</p>
 </ul>
 ]]></content>
     </entry>
-    
+    -->
 </feed>
