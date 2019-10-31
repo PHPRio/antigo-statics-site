@@ -110,12 +110,12 @@
 
             //limpando a descrição da issue pra ficar mais apresentável na página
             const body = issue.body
-                .replace(/(Nível|Título|Palavras-chaves?):.*\r\n/ig, '')
+                .replace(/(Nível|Título|Palavras-chaves?):.*\r\n/gi, '')
                 .replace(/Descrição da palestra:.*\r\n/i, '')
                 .replace(/(Palestrante:)/i, '<br/>$1')
                 .replace(/#(\d+)/, 'https://github.com/PHPRio/CFP/issues/$1')
-	            .replace(/(Slides|Referências?|Vídeo|GitHub):\s*(http.+)/ig,
-                    '<a target="_blank" href="$2" class="button icon fa-play-circle">$1</a>')
+	            .replace(/\[?(Slides|Referências?|Vídeo|GitHub)(:\s*|\]\()(http.+)\)?/gi,
+		            '<a target="_blank" href="$3" class="button icon fa-play-circle">$1</a>')
             talk.querySelector('.body').innerHTML = markdown.makeHtml(body)
 
             const labels = talk.querySelector('.labels')
@@ -124,10 +124,10 @@
                 .forEach(label => {
                     const el = document.createElement('a')
                     el.target = '_blank'
-	                el.classList.add('button', 'small')
+	                el.classList.add('button', 'small', 'icon', 'fa-hashtag')
                     el.style.backgroundColor = `#${label.color}`
 	                el.href = label.url
-	                el.innerText = `#${label.name}`
+	                el.innerText = label.name
                     labels.appendChild(el)
                 })
             talks.appendChild(talk)
