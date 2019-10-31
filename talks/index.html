@@ -7,7 +7,7 @@
 -->
 
 <head>
-    <title>Palestras do Grupo || PHPRio - Grupo de Desenvolvedores PHP do Rio e Grande Rio</title>
+    <title>Palestras Anteriores || PHPRio - Grupo de Desenvolvedores PHP do Rio e Grande Rio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -70,7 +70,7 @@
 
     <article id="main" class="clean">
 		<header class="random-bg">
-			<div class="inner"><h2>Palestras do Grupo</h2></div>
+			<div class="inner"><h2>Palestras Anteriores</h2></div>
 		</header>
 
 		<section class="wrapper style5" id="archive">
@@ -126,7 +126,7 @@
                     el.target = '_blank'
 	                el.classList.add('button', 'small', 'icon', 'fa-hashtag')
                     el.style.backgroundColor = `#${label.color}`
-	                el.href = label.url
+	                el.href = `https://github.com/PHPRio/CFP/issues?labels=Palestras,${label.name}`
 	                el.innerText = label.name
                     labels.appendChild(el)
                 })
