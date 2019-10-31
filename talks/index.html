@@ -51,8 +51,10 @@
                 <div id="menu">
                     <ul>
                         <li><a href="/eventos">Nossos eventos</a></li>
+                        <li><a href="/talks">Palestras anteriores</a></li>
+                        <li><a href="https://github.com/PHPRio/CFP">Enviar uma palestra</a></li>
+                        <li><a href="/vagas">Divulgar uma vaga</a></li>
                         <li><a href="/parceiros">Empresas parceiras</a></li>
-                        <li><a href="/vagas">Quero divulgar uma vaga</a></li>
                         <li><a href="/sobre">Sobre o grupo</a></li>
 
                         <li class="old"><a href="/campanha" target="_blank">Campanha do domínio - 2016</a></li>
@@ -67,92 +69,78 @@
 </header>
 
     <article id="main" class="clean">
-                    <!-- ------------------------------------------------------------------------------------------------------------------
-  Caro desenvolvedor legal:
-    NÃO RENOMEIE ESTE ARQUIVO PARA .TWIG.
-    Por um bug no lindo do Sculpin, aparentemente as páginas geradas pelo plugin de paginação são criadas com a extensão
-    .twig no final, zoando a navegação do site. Então, sim, você vai ficar sem markup de twig aqui. NEM TENTE.
-------------------------------------------------------------------------------------------------------------------- -->
+		<header class="random-bg">
+			<div class="inner"><h2>Palestras do Grupo</h2></div>
+		</header>
 
-<header class="random-bg">
-    <div class="inner"><h2>Palestras do Grupo</h2></div>
-</header>
+		<section class="wrapper style5" id="archive">
+			<div class="inner">
+								    <p class="align-left">
+    Um dos tipos de <a href="/eventos">eventos que organizamos no PHPRio</a> são os Ciclos de Palestras.<br/>
+    A cada novo evento, <a href="https://github.com/PHPRio/CFP">convidamos a comunidade a submeter palestras</a>, e as mais votadas são selecionadas para
+    participar das talks do mês.
+    <!-- TODO: melhorar esse texto -->
+</p>
 
-<section id="archive" class="wrapper style5 special">
-    <div class="inner">
+<ul class="features" id="talks">
+    <template id="talk">
+        <li>
+            <h3><a href=""><!-- Título --></a></h3>
+            <h4><!-- Subtítulo? --></h4>
+            <div class="body"></div>
+            <div class="labels"></div>
+        </li>
+    </template>
+</ul>
 
-        <p>
-            Um dos tipos de eventos que organizamos são os Ciclos de Palestras.<br/>
-            A cada novo evento, convidamos a comunidade a submeter palestras, e as mais votadas são selecionadas para
-            participar das talks do mês.
-            <!-- TODO: melhorar esse texto -->
-        </p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" integrity="sha256-LSUpTY0kkXGKvcBC9kbmgibmx3NVVgJvAEfTZbs51mU=" crossorigin="anonymous"></script>
+<script>
+    const talks = document.querySelector('#talks')
+    const template = talks.querySelector('template')
+    const markdown = new showdown.Converter()
 
-        <ul class="features">
-                                <li>
-                        <h3><a href="/talks/2016-10-27/REST-fuuu">REST-fuuu</a></h3>
-                        <h4>REST e a Polícia do HTTP</h4>
-                        <div>
-                            Por:                                 <a href="http://igorsantos.com.br" target="_blank">Igor Santos</a>
-                                                    </div>
+    fetch('https://api.github.com/repos/PHPRio/CFP/issues?state=closed&labels=Palestras')
+        .then(r => r.json())
+        .then(githubList => githubList.forEach(issue => {
+            const talk = document.importNode(template.content, true)
+            talk.querySelector('h3 a').href = issue.html_url
+            talk.querySelector('h3 a').innerText = issue.title
+            // talk.querySelector('h4').innerHTML = `Por @${issue.user.login}`
+            talk.querySelector('h4').remove()
 
-                            <div>
-                                Em:
-                                                                                                            <a href="https://www.meetup.com/PHP-Rio/events/234774958/" target="_blank">SENAC Santa Luzia</a>
-                                                                                                    [27/10/2016]
-                            </div>
+            //limpando a descrição da issue pra ficar mais apresentável na página
+            const body = issue.body
+                .replace(/(Nível|Título|Palavras-chaves?):.*\r\n/ig, '')
+                .replace(/Descrição da palestra:.*\r\n/i, '')
+                .replace(/(Palestrante:)/i, '<br/>$1')
+                .replace(/#(\d+)/, 'https://github.com/PHPRio/CFP/issues/$1')
+	            .replace(/(Slides|Referências?|Vídeo|GitHub):\s*(http.+)/ig,
+                    '<a target="_blank" href="$2" class="button icon fa-play-circle">$1</a>')
+            talk.querySelector('.body').innerHTML = markdown.makeHtml(body)
 
-                        <br/>
-                                                    <a target="_blank" href="https://speakerdeck.com/igorsantos07/rest-fuuu-front-end" class="button special icon fa-play-circle">Slides</a>
-                        
-                        
-                                                    <a target="_blank" href="https://www.meetup.com/PHP-Rio/photos/27391512/" class="button" title="Fotos da palestra">
-                                <i class="fa fa-camera" aria-hidden="true"></i>
-                            </a>
-                                            </li>
-                                <li>
-                        <h3><a href="/talks/2016-09-28/Programando-com-PHP-de-maneira-mais-segura">Programando com PHP de maneira mais segura</a></h3>
-                        <h4>PHP Security Recommendations</h4>
-                        <div>
-                            Por:                                 <a href="http://www.thiagotoledo.com" target="_blank">Thiago Toledo</a>
-                                                    </div>
-
-                            <div>
-                                Em:
-                                                                                                            <a href="https://www.meetup.com/pt-BR/PHP-Rio/events/233922880/" target="_blank">SENAC Santa Luzia</a>
-                                                                                                    [28/09/2016]
-                            </div>
-
-                        <br/>
-                                                    <a target="_blank" href="http://slides.com/thiagotoledo/php_seguranca" class="button special icon fa-play-circle">Slides</a>
-                        
-                        
-                                                    <a target="_blank" href="https://www.meetup.com/PHP-Rio/photos/27307012/" class="button" title="Fotos da palestra">
-                                <i class="fa fa-camera" aria-hidden="true"></i>
-                            </a>
-                                            </li>
-                    </ul>
-
-        <aside>
-                    </aside>
-
-    </div>
-</section>        
-        <!-- Exemplo:
-        <header>
-            <h2>Generic Page</h2>
-            <p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
-        </header>
-        <section class="wrapper style5">
-            <div class="inner">
-                <h3>Lorem ipsum dolor</h3>
-                <p>Vestibulum ultrices risus velit[...].</p>
-                <hr/>
-                <p>Vestibulum ultrices risus velit[...].</p>
-            </div>
-        </section>
-        -->
-    </article>
+            const labels = talk.querySelector('.labels')
+            issue.labels
+                .filter(l => l.name != 'Palestras')
+                .forEach(label => {
+                    const el = document.createElement('a')
+                    el.target = '_blank'
+	                el.classList.add('button', 'small')
+                    el.style.backgroundColor = `#${label.color}`
+	                el.href = label.url
+	                el.innerText = `#${label.name}`
+                    labels.appendChild(el)
+                })
+            talks.appendChild(talk)
+        }))
+        .catch(e => {
+        	console.error(e)
+            if (confirm('Tivemos um problema pra pegar a lista de palestras no Repositório de CFP. Quer visitá-lo?')) {
+                window.location = 'https://github.com/PHPRio/CFP/issues?labels=Palestras'
+            }
+        })
+</script>							</div>
+		</section>
+	</article>
 
     <footer id="footer">
     <ul class="icons fa-2x">
@@ -186,8 +174,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-
 </div>
-
 </body>
 </html>
