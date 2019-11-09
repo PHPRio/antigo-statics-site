@@ -6,6 +6,13 @@
 
 <p>This code is not complete, feel encouraged to participate. Just remember to maintain the code very concise and broad, our goal is to create a prolific community where everyone can feel good, grow as a person and help others.</p>
 
+<h2 id="your-own-job-announcements">Your own job announcements</h2>
+
+<ul>
+<li>We're focused in our channels in local job openings; be councious when advertising about external or remote openings</li>
+<li>Include the budget - <a href="#help-the-industry-become-a-better-place">help breaking the industry's vicious cycle</a></li>
+</ul>
+
 <h2 id="expected-behavior">Expected Behavior</h2>
 
 <h3 id="be-responsible">Be responsible</h3>
@@ -41,8 +48,7 @@
 <h3 id="be-supportive-and-look-out-for-each-other">Be supportive and look out for each other</h3>
 
 <ul>
-<li>Remember when you started something? Taking care of each other guides the community to another level,
-where everyone can learn and share their knowledge</li>
+<li>Remember when you started something? Taking care of each other guides the community to another level, where everyone can learn and share their knowledge</li>
 </ul>
 
 <h3 id="be-inquisitive">Be inquisitive</h3>
@@ -66,8 +72,7 @@ where everyone can learn and share their knowledge</li>
 <li>Invite the community inside your workplace</li>
 <li>Share your problems, bring cases</li>
 <li>Invite your coworkers to participate</li>
-<li>When sharing a work offer, put the job's budget: Usually companies avoid sharing them to leverage the
-market by the lowest offer. Break this cycle</li>
+<li>When sharing a work offer, put the job's budget: Usually companies avoid sharing them to leverage the market by the lowest offer. Break this cycle</li>
 </ul>
 
 <h3 id="give-it-back">Give it back</h3>
@@ -86,14 +91,14 @@ market by the lowest offer. Break this cycle</li>
 <li>Sustained disruption of talks or other events</li>
 <li>Intimidation or bullying (online or in-person)</li>
 <li>SPAM - the act of sending marketing oriented posts without context or even approval from the admins is considered spamming</li>
-<li>Flood - the act of inundate a source of interaction with messages of your own is considered flooding</li>
+<li>Flood - the act of inundating a source of interaction with messages of your own is considered flooding</li>
 <li>Sharing work offers without budget</li>
 </ul>
 
 <h2 id="reporting-and-enforcement">Reporting and Enforcement</h2>
 
 <ul>
-<li>If you are the subject of, or witness to any violations of this Code of Conduct, please contact us by email faleconosco@phprio.org</li>
+<li>If you are the subject of, or witness to any violations of this Code of Conduct, please contact us by email at faleconosco@phprio.org</li>
 <li>If necessary, PHPRio staff are empowered to take appropriate actions that may include, but are not limited to, warnings, expulsion from the community, and referrals to local law enforcement.</li>
 </ul>
 
