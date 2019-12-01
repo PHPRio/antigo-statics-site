@@ -188,7 +188,7 @@ Além disso, também lançamos esse site novo pra comemorar o novo domínio - ba
 
 <p>As doações esse ano serão feitas preferencialmente através do <strong>PicPay</strong>, plataforma online de pagamentos que não gera taxas de transferência nem pra você, nem pra gente, e permite pagamento até com cartão de crédito. Se você não tem conta, <a href="http://www.picpay.com/convite?TM7H">crie com esse link</a> - o bônus de indicação será revertido para a campanha, e você ganha R$10 em cashback no primeiro pagamento com cartão!</p>
 
-<p>Se quiser doar transferindo pra uma conta no <strong>Itaú</strong> ou <strong>NuConta</strong>, entre em contato abaixo para pedir os detalhes. O <strong>PayPal</strong> também foi adicionado, mas uma <a href="https://www.paypal.com/br/webapps/mpp/merchant-fees#commercialpayments">parte da doação será perdida com tarifas</a>.</p>
+<p>Adicionamos os dados de transferência pelo <strong>Itaú</strong> e <strong>NuConta</strong>. O <strong>PayPal</strong> também foi adicionado, mas uma <a href="https://www.paypal.com/br/webapps/mpp/merchant-fees#commercialpayments">parte da doação será perdida com tarifas</a>.</p>
 
 <!-- _momento Criança Esperança_ -->
 
@@ -210,9 +210,9 @@ Além disso, também lançamos esse site novo pra comemorar o novo domínio - ba
 <div id="picpay">
     <div class="align-right">
         <span class="align-center" style="display: inline-block">
-            <input id="custom" type="number" step="0.50" value="50.00" title="Outro valor"/><br/>
+            <input id="custom" type="number" step="0.50" value="50.00" title="Outro valor" class="align-center"/><br/>
             <a class="button special" style="margin-top: 10px;" href="javascript:window.location='https://picpay.me/igorsantos07/'+document.querySelector('#custom').value">
-                <i class="icon fa-gift"></i> Doar outro valor
+                <i class="fas fa-gift"></i> Doar outro valor
             </a>
         </span>
     </div>
@@ -223,8 +223,15 @@ Além disso, também lançamos esse site novo pra comemorar o novo domínio - ba
         </a>
     </div>
     <div>
+        <span class="button special clear" style="pointer-events: none">
+            <i class="fas fa-piggy-bank"></i>
+            Itaú: Ag 5624, C/C 09071-7
+        </span><br/>
+        <a class="button special" href="https://nubank.com.br/pagar/5xo68/HfXCt7bBc4">
+            <i class="fas fa-credit-card-blank"></i> NuConta
+        </a><br/>
         <a class="button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8TE9Q5DZL5YCA&source=url">
-            <i class="icon fa-paypal"></i> Paypal
+            <i class="fab fa-paypal"></i> Paypal
         </a>
     </div>
 </div>
@@ -235,7 +242,7 @@ Além disso, também lançamos esse site novo pra comemorar o novo domínio - ba
 
 <h3 id="progresso-da-campanha%3A-"><label for="progresso">Progresso da Campanha: <span class="total"></span></label></h3>
 
-<p><progress id="progresso" max="486.89" value="280.89"><span class="total"></span></progress></p>
+<p><progress id="progresso" max="486.89" value="380.89"><span class="total"></span></progress></p>
 
 <script>
     const valor = 'R$'+document.querySelector('#progresso').value
